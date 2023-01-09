@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="style.css">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+
+    <title>Uploading Documents Page</title>
+    </head>
+    <body style="background-color: rgb(186, 220, 233);">
+        <!-- This page will only have four fields for uploading documents
+        ➢ Recent passport size photograph (image size less than 4MB)
+        ➢ HSC mark sheet (image, PDF or docs size less than 4MB)
+        ➢ SSC mark sheet (image, PDF or docs size less than 4MB)
+        ➢ All semesters mark sheet in a single PDF or docs (file size less than 10MB)!-->
+        
+        <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-success text-center" style="color: red;"></h1>
+        </div>
+        </div>
+            <div class="row">
+            <div class="col-md-12">
+                <form action="FinalPage.html" method="post" onsubmit="return OnFilevalidation()">
+        <!-- Recent passport size photograph -->
+            <div class="form-group col-md-5 ml-5">
+                <label for="name">Recent passport size photograph</label><span>(image size less than 4MB)</span><span class="star" style="color: red";>*</span>                           
+                <span>Browse a file </span><input type="file" class="form-control" id="image" onchange="OnFilevalidation()" accept="image/*" required name="passport-img">
+            </div>
+        <!-- HSC mark sheet -->
+            <div class="form-group col-md-5 ml-5">
+                <label for="name">HSC mark sheet</label><span>(image size less than 4MB)</span><span class="star" style="color: red";>*</span>                           
+                <span>Browse a file </span><input type="file" class="form-control" id="hscmarksheet" onchange="OnFilevalidation()" accept="image/*" required name="hscmarksheet">
+            </div>
+        <!-- SSC mark sheet -->
+            <div class="form-group col-md-5 ml-5">
+                <label for="name">SSC mark sheet</label><span>(image size less than 4MB)</span><span class="star" style="color: red";>*</span>            
+                <inpu<span>Browse a file </span><input type="file" class="form-control" id="sscmarksheet" onchange="OnFilevalidation()" accept="image/*" required name="sscmarksheet">
+            </div>
+        <!-- All semesters mark sheet -->
+            <div class="form-group col-md-5 ml-5">
+                <label for="name">All semesters mark sheet</label><span>(image size less than 10MB)</span><span class="star" style="color: red";>*</span>                            
+                <span>Browse a file </span><input type="file" class="form-control" id="semmarksheet" onchange="OnFilevalidation()" accept=".pdf, .doc/*" required name="semmarksheet">
+            </div>
+            <div class="form-group">
+                <label for="saveandcontinue"></label>
+                <a href="FinalPage.html">
+                    <button type="submit" onclick="validation2()" class="btn btn-primary ml-5" id="saveandcontinue" name="saveandcontinue">Submit</button>
+                </a>
+                </div>
+                </form>
+                </div>
+                </div>
+    <script>
+            var passport = document.forms['myForm']['image'];
+            var hscmarksheet = document.forms['myForm']['hscmarksheet'];
+            var sscmarksheet = document.forms['myForm']['sscmarksheet'];
+            var semester = document.forms['myForm']['semmarksheet'];
+            function sizeValidation(){
+                if((passport.files[0].size) >= 4194304){
+                    alert("Passport photo size must be less than 4MB");
+                    return false;
+                }
+                if((hscmarksheet.files[0].size) >= 4194304){
+                    alert("HSC marksheet size must be less than 4MB");
+                    return false;
+                }
+                if((sscmarksheet.files[0].size) >= 4194304){
+                    alert("SSC marksheet size must be less than 4MB");
+                    return false;
+                }
+                if((semester.files[0].size) >= 10485760){
+                    alert("All semester marksheet PDF or DOCS must be less than 10MB");
+                    return false;
+                }
+            }
+
+        </script>
+    </div>
+</body>
+</html>

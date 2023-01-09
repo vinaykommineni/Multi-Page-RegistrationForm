@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Education Details Page</title>
+</head>
+<body style="background-color: rgb(186, 220, 233);">
+    <!-- 
+                Second page will be same as the 1st page just the input fields will be:
+                ➢ HSC Institution name
+                ➢ HSC Board (i.e CBSC, ICSC or State board)
+                ➢ Score in HSC in percentage
+                ➢ SSC Institution name
+                ➢ SSC Board (i.e CBSC, ICSC or State board)
+                ➢ Score in SSC in percentage
+                ➢ Currently pursuing
+                ➢ Current educational institution name
+                ➢ Overall percentage
+                ➢ Current backlogs if any
+         -->
+    <div class="container">
+    <div class="row">
+    <div class="col-md-12">
+        <h1 class="text-Black text-center"></h1>
+    </div>
+    </div>
+        <form action="ThirdPage.html" onsubmit="return validation1()">
+        <div class="row">
+        <div class="col-md-12">
+            <form action="" method="post">
+    <!-- HSC Institution name -->
+        <div class="form-group">
+            <label for="name">HSC Institution Name<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="hiname" name="hscinst" placeholder="" required />
+            <span id="name1" style="color: red;"></span>
+        </div>
+    <!-- HSC Board -->
+        <div class="form-group">
+            <label for="name">HSC Board<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="hboard" name="hscboard" placeholder="Ex:- CBSC, ICSC or State board" required />
+            <span id="board1" style="color: red;"></span>
+        </div>
+    <!-- HSC Score -->
+    <div class="form-group">
+        <label for="name">HSC Score<Span style="color: red;">*</Span></label>
+        <input type="number" class="form-control" id="hscore" name="hscscore" placeholder="Ex:- 98.5" required />
+        <span id="hscore1" style="color: red;"></span>
+    </div>
+    <!-- SSC Institution name -->
+        <div class="form-group">
+            <label for="name">SSC Institution Name<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="sname" name="sscinst" placeholder="" required />
+            <span id="sname1" style="color: red;"></span>
+        </div>
+    <!-- SSC Board -->
+        <div class="form-group">
+            <label for="name">SSC Board<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="sboard" name="sscboard" placeholder="Ex:- CBSC, ICSC or State board" required />
+            <span id="board2" style="color: red;"></span>
+        </div>
+    <!-- SSC Score -->
+        <div class="form-group">
+            <label for="name">SSC Score<Span style="color: red;">*</Span></label>
+            <input type="number" class="form-control" id="sscore" name="sscscore" placeholder="Ex:- 98.3" required />
+            <span id="sscore1" style="color: red;"></span>
+        </div>
+    <!-- Currently pursuing -->
+        <div class="form-group">
+            <label for="name">Currently pursuing<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="pursuing" name="currentlypursuing" placeholder="Education(or)Skills" required />
+            <span id="pursuing1" style="color: red;"></span>
+        </div>
+    <!-- Current educational institution name -->
+        <div class="form-group">
+            <label for="name">Current educational institution name<Span style="color: red;">*</Span></label>
+            <input type="text" class="form-control" id="ceducational" name="currenteducinst" placeholder="" required />
+            <span id="edu1" style="color: red;"></span>
+        </div>
+    <!-- Overall percentage -->
+        <div class="form-group">
+            <label for="name">Overall percentage<Span style="color: red;">*</Span></label>
+            <input type="number" class="form-control" id="percentage" name="overallpercentage" placeholder="Ex:- 97.2" required />
+            <span id="per" style="color: red;"></span>
+        </div>
+    <!-- Current backlogs if any -->
+        <div class="form-group">
+            <label for="name">Current backlogs if any<Span style="color: red;">*</Span></label>
+            <input type="number" class="form-control" id="backlogs" name="currentbacklogs" placeholder="Number Of Backlogs" required />
+            <span id="any" style="color: red;"></span>
+            </div>
+        <div class="form-group">
+            <label for="saveandcontinue"></label>
+                <a href="ThirdPage.html">
+                    <button type="submit" onclick="validation1()" class="btn btn-primary" id="saveandcontinue" name="saveandcontinue">Save and Continue</button>
+                </a>
+        </div>
+        </form>
+        </div>
+        </div>
+        </form>
+        </div>
+    <script type="text/javascript">
+    function validation1(){
+            var n = document.getElementById("hiname").value;
+            if(n==""){
+                document.getElementById("name1").innerHTML="**please fill HSC Institution Name";
+                return false;
+            }
+            else{
+                document.getElementById("name1").innerHTML="";
+            }
+
+            var b = document.getElementById("hboard").value;
+            if(b==""){
+                document.getElementById("board1").innerHTML="**please fill HSC Board";
+                return false;
+            }
+            else{
+                document.getElementById("board1").innerHTML="";
+            }
+
+            var s = document.getElementById("hscore").value;
+            if(s==""){
+                document.getElementById("hscore1").innerHTML="**please fill HSC Score";
+                return false;
+            }
+            else{
+                document.getElementById("hscore1").innerHTML="";
+            }
+
+
+            var r = document.getElementById("sname").value;
+            if(r==""){
+                document.getElementById("sname1").innerHTML="**please fill SSC Institution Name";
+                return false;
+            }
+            else{
+                document.getElementById("sname1").innerHTML="";
+            }
+
+            var d = document.getElementById("sboard").value;
+            if(d==""){
+                document.getElementById("board2").innerHTML="**please fill SSC Board";
+                return false;
+            }
+            else{
+                document.getElementById("board2").innerHTML="";
+            }
+
+            var m = document.getElementById("sscore").value;
+            if(m==""){
+                document.getElementById("sscore1").innerHTML="**please fill SSC Score";
+                return false;
+            }
+            else{
+                document.getElementById("sscore1").innerHTML="";
+            }
+
+            var p = document.getElementById("pursuing").value;
+            if(p==""){
+                document.getElementById("pursuing1").innerHTML="**please fill Currently Pursuing";
+                return false;
+            }
+            else{
+                document.getElementById("pursuing1").innerHTML="";
+            }
+
+            var e = document.getElementById("ceducational").value;
+            if(e==""){
+                document.getElementById("edu1").innerHTML="**please fill Current educational name";
+                return;
+            }
+            else{
+                document.getElementById("edu1").innerHTML="";
+            }
+
+            var o = document.getElementById("percentage").value;
+            if(o==""){
+                document.getElementById("per").innerHTML="**please fill overall percentage";
+                return false;
+            }
+            else{
+                document.getElementById("per").innerHTML="";
+            }
+
+            var y = document.getElementById("backlogs").value;
+            if(y==""){
+                document.getElementById("any").innerHTML="**please fill Current backlogs if any";
+                return false;
+            } else{
+                document.getElementById("any").innerHTML="";
+            }
+        //     let hscn=document.getElementById("hiname").value;
+        //     user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+        //     user_records.push({
+        //     "hscname":hscn
+        //     })
+        // localStorage.setItem("users",JSON.stringify(user_records));
+    let hsci,hboard,hscore,sname,sboard,sscore,pursuing,ceducational,backlogs;
+        hsci=document.getElementById("hiname").value;
+        hboard=document.getElementById("hboard").value;
+        hscore=document.getElementById("hscore").value;
+        sname=document.getElementById("sname").value;
+        sboard=document.getElementById("sboard").value;
+        sscore=document.getElementById("sscore").value;
+        pursuing=document.getElementById("pursuing").value;
+        ceducational=document.getElementById("ceducational").value;
+        percentage=document.getElementById("percentage").value;
+        backlogs=document.getElementById("backlogs").value;
+    let user_records=new Array();
+      user_records=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+    //   if(user_records.some((v)=>{return v.hiname==hiname}))
+    //     {
+    //     alert("duplicated data is inserted");
+    //     }
+    //     else
+    //     {
+        user_records.push({
+        "hsci":hsci,
+        "hboard":hboard,
+        "hscore":hscore,
+        "sname":sname,
+        "sboard":sboard,
+        "sscore":sscore,
+        "pursuing":pursuing,
+        "ceducational":ceducational,
+        "percentage":percentage,
+        "backlogs":backlogs
+
+        })
+        localStorage.setItem("users",JSON.stringify(user_records));
+
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
